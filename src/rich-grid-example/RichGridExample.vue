@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import {AgGridVue} from "ag-grid-vue";
+import {AgGridVue} from "ag-grid-vue3";
 
 import 'ag-grid-enterprise';
 
