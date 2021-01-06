@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import {AgGridVue} from "ag-grid-vue";
+    import {AgGridVue} from "ag-grid-vue3";
     import Renderer from './Renderer.vue';
     import Editor from './Editor.vue';
 

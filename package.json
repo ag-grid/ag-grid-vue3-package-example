@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-vue3-package-example",
-  "version": "24.1.1",
+  "version": "25.0.0",
   "private": true,
   "scripts": {
     "start": "npm run serve",
@@ -11,9 +11,9 @@
     "test:debug": "node --inspect-brk ./node_modules/@vue/cli-service/bin/vue-cli-service.js test:unit"
   },
   "dependencies": {
-    "ag-grid-community": "~24.1.0",
-    "ag-grid-enterprise": "~24.1.0",
-    "ag-grid-vue3": "~24.1.0",
+    "ag-grid-community": "~25.0.0",
+    "ag-grid-enterprise": "~25.0.0",
+    "ag-grid-vue3": "~25.0.0",
     "bootstrap": "4.5.0",
     "vue": "3.0.0",
     "vue-property-decorator": "9.0.0",
