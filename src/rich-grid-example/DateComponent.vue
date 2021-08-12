@@ -80,7 +80,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .filter {
   margin: 2px
 }
