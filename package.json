@@ -11,6 +11,7 @@
     "test:debug": "node --inspect-brk ./node_modules/@vue/cli-service/bin/vue-cli-service.js test:unit"
   },
   "dependencies": {
+    "@vue/babel-preset-app": "4.5.13",
     "ag-grid-community": "~26.0.0",
     "ag-grid-enterprise": "~26.0.0",
     "ag-grid-vue3": "~26.0.0",
