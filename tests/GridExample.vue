@@ -33,8 +33,8 @@
                 {
                     field: 'price',
                     editable: true,
-                    cellRendererFramework: 'Renderer',
-                    cellEditorFramework: 'Editor'
+                    cellRendererComp: 'Renderer',
+                    cellEditorComp: 'Editor'
                 }
             ];
 
