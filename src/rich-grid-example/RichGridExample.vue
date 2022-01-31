@@ -141,7 +141,7 @@ export default {
         },
         {
           headerName: 'Employee',
-          headerGroupComponentFramework: HeaderGroupComponent,
+          headerGroupComponent: HeaderGroupComponent,
           children: [
             {
               headerName: "Name", field: "name",
