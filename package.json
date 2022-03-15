@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-vue3-package-example",
-  "version": "27.0.0",
+  "version": "27.1.0",
   "private": true,
   "scripts": {
     "start": "npm run serve",
@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@vue/babel-preset-app": "4.5.13",
-    "ag-grid-community": "~27.0.0",
-    "ag-grid-enterprise": "~27.0.0",
-    "ag-grid-vue3": "~27.0.0",
+    "ag-grid-community": "~27.1.0",
+    "ag-grid-enterprise": "~27.1.0",
+    "ag-grid-vue3": "~27.1.0",
     "bootstrap": "4.5.0",
     "core-js": "3.11.1",
     "vue": "3.2.29",
