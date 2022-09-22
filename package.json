@@ -50,5 +50,11 @@
       "parser": "babel-eslint"
     },
     "rules": {}
+  },
+  "nx": {
+    "implicitDependencies": [
+      "ag-grid-vue3",
+      "ag-grid-enterprise"
+    ]
   }
 }
