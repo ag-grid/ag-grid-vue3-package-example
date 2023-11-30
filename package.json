@@ -1,20 +1,19 @@
 {
   "name": "ag-grid-vue3-package-example",
-  "version": "30.1.0",
+  "version": "31.0.0",
   "private": true,
   "scripts": {
     "start": "npm run serve",
     "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve --host 0.0.0.0",
-    "package": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build && npm run hash",
-    "hash": "sh ./hashDirectory.sh > .hash",
+    "package": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
     "test:tbd": "vue-cli-service test:unit --env=jest-environment-jsdom-fourteen",
     "test:debug": "node --inspect-brk ./node_modules/@vue/cli-service/bin/vue-cli-service.js test:unit"
   },
   "dependencies": {
     "@vue/babel-preset-app": "4.5.13",
-    "ag-grid-community": "~30.1.0",
-    "ag-grid-enterprise": "~30.1.0",
-    "ag-grid-vue3": "~30.1.0",
+    "ag-grid-community": "~31.0.0",
+    "ag-grid-enterprise": "~31.0.0",
+    "ag-grid-vue3": "~31.0.0",
     "bootstrap": "4.5.0",
     "core-js": "3.11.1",
     "vue": "3.2.33",
