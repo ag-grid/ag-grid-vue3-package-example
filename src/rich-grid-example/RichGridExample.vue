@@ -21,13 +21,13 @@
             <div style="padding: 4px;" class="btn-toolbar">
             <span>
                 Grid API:
-                <button class="btn btn-primary mx-1" @click="gridOptions.api.selectAll()">Select All</button>
-                <button class="btn btn-primary mx-1" @click="gridOptions.api.deselectAll()">Clear Selection</button>
+                <button class="btn btn-primary mx-1" @click="api.selectAll()">Select All</button>
+                <button class="btn btn-primary mx-1" @click="api.deselectAll()">Clear Selection</button>
             </span>
                 <span style="margin-left: 20px;">
                 Column API:
-                <button class="btn btn-primary mx-1" @click="gridOptions.api.setColumnVisible('country', false)">Hide Country Column</button>
-                <button class="btn btn-primary mx-1" @click="gridOptions.api.setColumnVisible('country', true)">Show Country Column</button>
+                <button class="btn btn-primary mx-1" @click="api.setColumnVisible('country', false)">Hide Country Column</button>
+                <button class="btn btn-primary mx-1" @click="api.setColumnVisible('country', true)">Show Country Column</button>
             </span>
             </div>
             <div class="btn-toolbar d-flex align-items-center py-2">
@@ -38,7 +38,6 @@
                 <button class="btn btn-primary mx-1" @click="createRowData()">Refresh Data</button>
             </div>
             <ag-grid-vue style="width: 100%;" class="flex-grow-1 flex-shrink-1 ag-theme-alpine"
-                         :gridOptions="gridOptions"
                          :columnDefs="columnDefs"
                          :rowData="rowData"
                          :sideBar="sideBar"
@@ -54,7 +53,6 @@
                          rowSelection="multiple"
 
                          @grid-ready="onReady"
-                         @model-updated="onModelUpdated"
                          @cell-clicked="onCellClicked"
                          @cell-double-clicked="onCellDoubleClicked"
                          @cell-context-menu="onCellContextMenu"
@@ -102,7 +100,9 @@
             }
         },
         components: {
-            AgGridVue
+            AgGridVue,
+            // eslint-disable-next-line
+            agDateInput: DateComponent
         },
         methods: {
             createRowData() {
@@ -202,26 +202,10 @@
                 return asString;
             },
 
-            calculateRowCount() {
-                if (this.api && this.rowData) {
-                    let model = this.gridOptions.api.getModel();
-                    let totalRows = this.rowData.length;
-                    let processedRows = model.getRowCount();
-                    this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString();
-                }
-            },
-
-            onModelUpdated() {
-                console.log('onModelUpdated');
-                this.calculateRowCount();
-            },
-
             onReady(params) {
                 console.log('onReady');
 
                 this.api = params.api;
-                this.calculateRowCount();
-
                 this.api.sizeColumnsToFit();
             },
 
@@ -271,7 +255,7 @@
             },
 
             onQuickFilterChanged(event) {
-                this.gridOptions.api.setQuickFilter(event.target.value);
+                this.api.setQuickFilter(event.target.value);
             },
 
             // here we use one generic event to handle all the column type events.
@@ -281,8 +265,6 @@
             }
         },
         beforeMount() {
-            this.gridOptions = {};
-            this.gridOptions.components = {agDateInput: DateComponent};
             this.createRowData();
             this.createColumnDefs();
             this.showGrid = true;
